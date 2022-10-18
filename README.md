@@ -19,9 +19,11 @@ My motivation behind making this project was to further my understanding of Java
 Please refer to the LICENSE in the repo.
 
 ## Deployed Page
-<a href="https://emiliatrentham.github.io/semantic-html-refactor/%22%3EDeployed Project</a>
+<a href="https://vlad-kronk.github.io/password-generator/">https://vlad-kronk.github.io/password-generator/</a>
 
 ## Contact
-<a href="https://www.linkedin.com/in/emilia-trentham-987a59164/" >LinkedIn: Emilia Trentham</a>
+<a href="https://www.linkedin.com/in/jmeyers6/" >LinkedIn</a>
 
-<a href="https://github.com/emiliatrentham%22%3EGithub: emiliatrentham</a>
+<a href="https://github.com/vlad-kronk">Github</a>
+
+<a href="https://vlad-kronk.github.io/professional-portfolio/">Portfolio</a>
