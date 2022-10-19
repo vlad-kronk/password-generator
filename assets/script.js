@@ -36,6 +36,7 @@ function generatePassword() {
   '^', '_', '`', '~', '{', '|', '}'];
 
   var password = [];
+  var chars = [];
 
   //initialize variables
   var numChars;
@@ -44,7 +45,6 @@ function generatePassword() {
   var includeNums = false;
   var includeSpecial = false;
   var userInput;
-
 
   
   ///////// HELPERS ////////
@@ -60,7 +60,16 @@ function generatePassword() {
     return array[Math.floor(Math.random() * array.length)];
   }
 
-
+  function insertAtRandom(charArray) {
+    while (true) {
+      var i = Math.floor(Math.random() * password.length);
+      if (password[i] === '') {
+        password[i] = getRandElement(charArray);
+        break;
+      }
+    }
+  }
+  
 
   ///////// PROMPTS /////////
 
@@ -114,57 +123,29 @@ function generatePassword() {
   //guarantees the presence of at least one of each requested character
   //type and sets up array for getting random characters to fill the rest
 
-  var chars = [];
 
   //did we want uppercase characters?
   if (includeUpper) {
-    while (true) {
-      //gets a random index in the password
-      var i = Math.floor(Math.random() * password.length);
-      //is that space empty?
-      if (password[i] === '') {
-        //fill it with a random uppercase character and exit the loop
-        password[i] = getRandElement(uppercaseChars);
-        break;
-      }
-    }
+    insertAtRandom(uppercaseChars);
     //add uppercase characters to cumulative list of character options
     chars = chars.concat(uppercaseChars);
   }
   
   
   if (includeLower) {
-    while (true) {
-      var i = Math.floor(Math.random() * password.length);
-      if (password[i] === '') {
-        password[i] = getRandElement(lowercaseChars);
-        break;
-      }
-    }
+    insertAtRandom(lowercaseChars);
     
     chars = chars.concat(lowercaseChars);
   }
   
   if (includeNums) {
-    while (true) {
-      var i = Math.floor(Math.random() * password.length);
-      if (password[i] === '') {
-        password[i] = getRandElement(numericChars);
-        break;
-      }
-    }
+    insertAtRandom(numChars);
     
     chars = chars.concat(numericChars);
   }
   
   if (includeSpecial) {
-    while (true) {
-      var i = Math.floor(Math.random() * password.length);
-      if (password[i] === '') {
-        password[i] = getRandElement(specialChars);
-        break;
-      }
-    }
+    insertAtRandom(specialChars);
     
     chars = chars.concat(specialChars);
   }
